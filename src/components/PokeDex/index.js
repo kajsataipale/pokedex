@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
 import PokeList from '../PokeList';
 import Loading from '../Loading';
+import Button from '../Button';
 
 class PokeDex extends Component {
 
   state = {
-    type: 'grass',
+    type: '',
+    types: [
+      'grass',
+       'water',
+       'fire',
+       'electric',
+       'flying',
+       'poison',
+       'normal',
+          ],
     pokemon: [],
   }
 
-  componentDidMount = () => {
+  handleButton = (e) => {
+    this.setState({
+      type: e.target.textContent,
+      pokemon: [],
+    })
+  }
+
+  componentDidUpdate = () => {
     const api = `http://pokeapi.salestock.net/api/v2/type/${this.state.type}`;
 
     fetch(api)
@@ -24,6 +41,11 @@ class PokeDex extends Component {
   render() {
     return (
       <div className="PokeDex">
+        {
+          this.state.types.map((item, index) => (
+            <Button key={index} type={item} event={this.handleButton}/>
+          ) )
+        }
        {
          this.state.pokemon.length ?
          <PokeList pokemon={this.state.pokemon} />
