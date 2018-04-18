@@ -1,9 +1,23 @@
+@font-face {
+  font-family: 'pokemon';
+  src: url('/font/PokemonGB.ttf');
+}
+@font-face {
+  font-family: 'pokemon_silver_gold';
+  src: url('/font/PokemonUnownGB.ttf');
+}
+@font-face {
+  font-family: 'pokedex';
+  src: url('/font/PocketMonk.otf');
+}
 Body{
   width: 100%;
   height: 100%;
 }
 .App {
   text-align: center;
+  font-family: 'pokedex';
+
 }
 
 .App-logo {
@@ -12,15 +26,12 @@ Body{
 }
 
 .App-header {
-  background-color: #222;
+  background-color: red;
   height: 150px;
   padding: 20px;
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
 
 .App-intro {
   font-size: large;

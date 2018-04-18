@@ -1,0 +1,10 @@
+.PokeDex{
+  width: 50%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'pokemon';
+  flex-wrap: wrap;
+  margin: 10px;
+}

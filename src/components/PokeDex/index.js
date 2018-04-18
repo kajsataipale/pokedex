@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PokeList from '../PokeList';
 import Loading from '../Loading';
 import Button from '../Button';
+import './index.css';
 
 class PokeDex extends Component {
 
