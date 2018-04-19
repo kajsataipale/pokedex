@@ -8,9 +8,6 @@ class PokeCard extends Component{
   }
 
   componentDidUpdate = () => {
-    this.setState({
-      pokemon:{}
-    })
     const api = `http://pokeapi.salestock.net/api/v2/pokemon/${this.props.pokemon}`;
 
     fetch(api)
