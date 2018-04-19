@@ -1,7 +1,5 @@
 .Button {
   background-color: #0c55ff;
-  width: 10vh;
-  height: 10vh;
   color: #f9fbfc;
   -moz-border-radius:    10px;
   -webkit-border-radius: 10px;
@@ -9,7 +7,8 @@
   border: 1px solid black;
   font-size: 15px;
   margin: 0;
-  padding: 0;
+  padding: 20px;
+  font-family: 'pokemon';
 }
 
 .Button:hover {
