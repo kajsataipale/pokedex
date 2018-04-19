@@ -22,7 +22,7 @@ class App extends Component {
           <h1 className="App-title">Pokedex</h1>
         </header>
         <main>
-          <PokeCard />
+          <PokeCard pokemon={this.state.pokemon} />
           <PokeDex handlePokeClick={this.handlePokeClick} />
         </main>
       </div>
