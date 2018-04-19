@@ -1,0 +1,15 @@
+.Pokemon {
+  text-transform: capitalize;
+  padding: 3px 5px;
+  width: 50%;
+}
+.Pokemon:nth-child(odd) {
+  border-right: 1px solid black;
+}
+.Pokemon:nth-child(even) {
+  border-left: 1px solid black;
+}
+.Pokemon:hover {
+  cursor: pointer;
+  font-weight: bold;
+}

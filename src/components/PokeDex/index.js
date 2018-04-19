@@ -16,6 +16,7 @@ class PokeDex extends Component {
        'flying',
        'poison',
        'normal',
+       'ground',
           ],
     pokemon: [],
   }
@@ -42,14 +43,16 @@ class PokeDex extends Component {
   render() {
     return (
       <div className="PokeDex">
-        {
-          this.state.types.map((item, index) => (
-            <Button key={index} type={item} event={this.handleButton}/>
-          ) )
-        }
+        <div className="ButtonWrapper">
+          {
+            this.state.types.map((item, index) => (
+              <Button key={index} type={item} event={this.handleButton}/>
+            ) )
+          }
+        </div>
        {
          this.state.pokemon.length ?
-         <PokeList pokemon={this.state.pokemon} />
+         <PokeList pokemon={this.state.pokemon} click={this.props.handlePokeClick} />
          : <Loading />
        }
       </div>
