@@ -6,30 +6,26 @@ import './index.css';
 
 class PokeDex extends Component {
 
-  state = {
-    type: '',
-    types: [
-      'grass',
-       'water',
-       'fire',
-       'electric',
-       'flying',
-       'poison',
-       'normal',
-       'ground',
-          ],
-    pokemon: [],
+  constructor(props) {
+    super(props);
+    this.state = {
+      type: '',
+      types: [
+        'grass',
+         'water',
+         'fire',
+         'electric',
+         'flying',
+         'poison',
+         'normal',
+         'ground',
+            ],
+      pokemon: [],
+    }
   }
 
   handleButton = (e) => {
-    this.setState({
-      type: e.target.textContent,
-      pokemon: [],
-    })
-  }
-
-  componentDidUpdate = () => {
-    const api = `http://pokeapi.salestock.net/api/v2/type/${this.state.type}`;
+    const api = `http://pokeapi.salestock.net/api/v2/type/${e.target.textContent}`;
 
     fetch(api)
     .then(data => data.json())
@@ -51,7 +47,7 @@ class PokeDex extends Component {
           }
         </div>
        {
-         this.state.pokemon.length ?
+         this.state.pokemon.length > 0 ?
          <PokeList pokemon={this.state.pokemon} click={this.props.handlePokeClick} />
          : <Loading />
        }
