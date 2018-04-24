@@ -1,4 +1,8 @@
 .PokeCard {
-  height: 50vh;
+  border: 5px solid yellow;
+  border-radius: 5px;
+  height: 100%;
+  margin-right: 1rem;
+  padding: 1rem;
   width: 50vw;
 }

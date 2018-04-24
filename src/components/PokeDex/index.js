@@ -9,6 +9,7 @@ class PokeDex extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: false,
       type: '',
       types: [
         'grass',
@@ -25,12 +26,16 @@ class PokeDex extends Component {
   }
 
   handleButton = (e) => {
+    this.setState({
+      loading: true,
+    })
     const api = `http://pokeapi.salestock.net/api/v2/type/${e.target.textContent}`;
 
     fetch(api)
     .then(data => data.json())
     .then((json) => {
       this.setState({
+        loading: false,
         pokemon: json.pokemon,
       })
     })
@@ -47,9 +52,11 @@ class PokeDex extends Component {
           }
         </div>
        {
+         this.state.loading ?
+         <Loading /> :
          this.state.pokemon.length > 0 ?
-         <PokeList pokemon={this.state.pokemon} click={this.props.handlePokeClick} />
-         : <Loading />
+         <PokeList pokemon={this.state.pokemon} click={this.props.handlePokeClick} /> :
+           ''
        }
       </div>
     );

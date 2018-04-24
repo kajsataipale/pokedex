@@ -18,6 +18,7 @@
 Body {
   background-color: red;
   width: 100%;
+  padding: 0 2rem;
   height: 100%;
 }
 
