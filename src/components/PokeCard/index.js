@@ -28,6 +28,7 @@ class PokeCard extends Component{
 
   render(){
     const pokemon = this.state.pokemon;
+    console.log(pokemon);
     return(
       <div className="PokeCard">
         { this.state.loading ? <Loading /> :
@@ -35,6 +36,11 @@ class PokeCard extends Component{
           <div>
             <img alt="pokemonImage" src={pokemon.sprites.front_default} width="200px" />
             <h2>{pokemon.name}</h2>
+            <ul className="PokeStats">
+              <li><strong>HP: </strong>{pokemon.stats[5].base_stat}</li>
+              <li><strong>Attack: </strong>{pokemon.stats[4].base_stat}</li>
+              <li><strong>Defense: </strong>{pokemon.stats[3].base_stat}</li>
+            </ul>
           </div> :
           ''
         }
