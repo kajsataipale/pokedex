@@ -30,12 +30,13 @@ class PokeCard extends Component{
     const pokemon = this.state.pokemon;
     console.log(pokemon);
     return(
-      <div className="PokeCard">
+      <div className="PokeCardWrapper">
         { this.state.loading ? <Loading /> :
           pokemon.hasOwnProperty('name') ?
-          <div>
-            <img alt="pokemonImage" src={pokemon.sprites.front_default} width="200px" />
+          <div className="PokeCard">
+            <img className="PokemonImage" alt="PokemonImage" src={pokemon.sprites.front_default} width="200px" />
             <h2>{pokemon.name}</h2>
+            <hr></hr>
             <ul className="PokeStats">
               <li><strong>HP: </strong>{pokemon.stats[5].base_stat}</li>
               <li><strong>Attack: </strong>{pokemon.stats[4].base_stat}</li>

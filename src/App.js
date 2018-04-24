@@ -18,8 +18,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Pokedex</h1>
+        <div className="BlueThing"></div>
+        <header className="AppHeader">
+          <h1 className="AppTitle">Pokedex</h1>
         </header>
         <main>
           <PokeCard pokemon={this.state.pokemon} />
